@@ -1,0 +1,112 @@
+.breakout-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 600px; /* Mantener el tamaño para escritorio */
+  background-color: #333;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  background-image: url('https://st2.depositphotos.com/1454700/6392/i/450/depositphotos_63921643-stock-photo-arcade-machine-opposing-duel.jpg');
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+/* Añadir estilo para el canvas */
+.breakout-container canvas {
+  border: 2px solid #ffffff; /* Bordes blancos */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+.breakout-paddle {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 100px;
+  height: 20px;
+  background-color: #ffcc00;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  transition: left 0.1s ease-out; /* Suaviza el movimiento de la pala */
+}
+
+.breakout-ball {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #f54c4c;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.1s ease-out;
+}
+
+.breakout-brick {
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  background-color: #4a90e2;
+  margin: 2px;
+  border-radius: 4px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.breakout-brick.hit {
+  background-color: #ff4d4d;
+  transform: scale(0.9); /* Animación al ser golpeado */
+}
+
+.breakout-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  display: none; /* Oculto por defecto */
+  z-index: 10; /* Asegura que el modal esté sobre el resto */
+}
+
+.breakout-modal.active {
+  display: block; /* Mostrar cuando está activo */
+}
+.breakout-mobile-warning {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin-top: 60px; /* Asegura espacio bajo el header */
+  position: relative; /* No flotará sobre el header */
+  z-index: 1; /* Asegura que esté sobre otros elementos pero no el header */
+}
+
+@media (max-width: 768px) {
+  .breakout-container {
+    display: none; /* Oculta el contenedor del juego en móviles */
+  }
+
+  .breakout-mobile-warning {
+    display: block; /* Muestra el mensaje de advertencia en móviles */
+  }
+}
+
+@media (max-width: 768px) {
+  .breakout-container {
+    display: none; /* Oculta el contenedor del juego en móviles */
+  }
+
+  .breakout-mobile-warning {
+    display: block; /* Muestra el mensaje de advertencia en móviles */
+  }
+}

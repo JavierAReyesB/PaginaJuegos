@@ -1,0 +1,46 @@
+/* src/styles/Footer.css */
+
+.footer {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: rgba(34, 34, 34, 0.9); /* Fondo oscuro */
+  color: #f1f1f1; /* Texto claro */
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Borde superior ligero */
+  position: fixed; /* Fija el footer en la parte inferior de la pantalla */
+  bottom: 0; /* Posiciona el footer en la parte inferior */
+  left: 0;
+  z-index: 10; /* Asegura que el footer esté sobre otros elementos */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Color del texto con ligera transparencia */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px 15px; /* Reduce el padding para ahorrar espacio */
+  }
+
+  .footer p {
+    font-size: 0.8rem; /* Reduce el tamaño del texto para mejor legibilidad en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 8px 10px; /* Ajuste adicional para pantallas muy pequeñas */
+  }
+
+  .footer p {
+    font-size: 0.75rem; /* Texto aún más pequeño para pantallas muy pequeñas */
+  }
+}

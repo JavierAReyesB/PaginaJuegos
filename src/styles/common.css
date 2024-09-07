@@ -1,0 +1,22 @@
+/* src/styles/common.css */
+
+/* Estilos comunes para enlaces de navegación */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s, background-color 0.3s; /* Transiciones suaves */
+  padding: 0.5rem 1rem; /* Mejora la usabilidad con mayor área de clic */
+  border-radius: 4px; /* Borde redondeado para consistencia visual */
+}
+
+.nav-link:hover {
+  color: #ddd;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil al hacer hover */
+}
+
+.nav-link.active {
+  color: var(--accent-color); /* Color de acento para enlaces activos */
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo destacado para activos */
+}

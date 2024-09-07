@@ -1,0 +1,129 @@
+/* src/styles/MemoryMatch.css */
+
+.memory-match-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(46, 58, 70, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 20px auto;
+  color: #f1f1f1;
+  background-image: url('https://st2.depositphotos.com/1454700/6392/i/450/depositphotos_63921643-stock-photo-arcade-machine-opposing-duel.jpg');
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+
+.score-board {
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(58, 71, 80, 0.8);
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 300px;
+  margin: 10px auto;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.memory-card {
+  width: 80px;
+  height: 100px;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+}
+
+.memory-card .card-front,
+.memory-card .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  border-radius: 8px;
+  transition: transform 0.6s ease-in-out;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.memory-card .card-front {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(221, 221, 221, 0.8);
+  transform: rotateY(180deg);
+}
+
+.memory-card .card-back {
+  background-color: rgba(75, 93, 107, 0.9);
+  color: #fff;
+  border: 2px solid rgba(46, 58, 70, 0.8);
+}
+
+.memory-card.flipped .card-front {
+  transform: rotateY(0);
+}
+
+.memory-card.flipped .card-back {
+  transform: rotateY(180deg);
+}
+
+/* Media queries para mejorar adaptabilidad en móviles */
+@media (max-width: 768px) {
+  .memory-grid {
+    grid-template-columns: repeat(3, 1fr); /* Mantener al menos 3 columnas */
+    gap: 8px;
+  }
+
+  .memory-card {
+    width: 70px;
+    height: 90px; /* Ajuste de tamaño para dispositivos de tamaño medio */
+  }
+
+  .memory-card .card-front,
+  .memory-card .card-back {
+    font-size: 3rem; /* Ajuste de tamaño de fuente */
+  }
+}
+
+@media (max-width: 480px) {
+  .memory-match-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .score-board {
+    width: 90%;
+  }
+
+  .memory-grid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Mantener 3 columnas incluso en pantallas más pequeñas */
+    gap: 5px; /* Reducir el espacio entre cartas */
+  }
+
+  .memory-card {
+    width: 60px;
+    height: 80px; /* Tamaño aún manejable para pantallas muy pequeñas */
+  }
+
+  .memory-card .card-front,
+  .memory-card .card-back {
+    font-size: 3rem; /* Ajuste de fuente adicional para asegurar legibilidad */
+  }
+}

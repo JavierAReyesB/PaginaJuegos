@@ -1,0 +1,71 @@
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #f85454;
+  --accent-color: #ffcc00;
+  --neutral-light: #f9f9f9;
+  --neutral-dark: #333;
+  --neutral-border: #ddd;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--neutral-dark);
+  background-color: var(--neutral-light);
+  background-image: url('https://st2.depositphotos.com/1454700/6392/i/450/depositphotos_63921325-stock-photo-arcade-machine-opposing-duel.jpg'); /* Ajusta la ruta a la ubicación de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen al fondo */
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegurar que los títulos sean legibles sobre el fondo */
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Añade sombra para mejorar la legibilidad */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fondo semitransparente para destacar el contenido */
+  border-radius: 8px; /* Bordes redondeados para un look moderno */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra para destacar el contenedor */
+}
+
+/* Botones generales */
+.button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Transición para el contenido al cambiar de página */
+#app {
+  transition: opacity 0.3s ease-in-out; /* Define la transición en el elemento principal */
+}
+
+#app.fade-out {
+  opacity: 0; /* Aplicar el efecto de desvanecimiento al activar la clase */
+}

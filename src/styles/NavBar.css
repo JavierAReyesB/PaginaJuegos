@@ -1,0 +1,75 @@
+/* src/styles/NavBar.css */
+
+/* Importar estilos comunes */
+@import './common.css';
+
+.nav-bar {
+  display: flex;
+  gap: 1rem; /* Espaciado uniforme entre los enlaces */
+  justify-content: flex-end; /* Alinea los enlaces a la derecha */
+  flex-grow: 0; /* Evita que el NavBar crezca más de lo necesario */
+  flex-shrink: 1; /* Permite que el NavBar se reduzca si el espacio es limitado */
+  flex-basis: auto; /* Deja que el tamaño se ajuste automáticamente */
+  margin-left: auto; /* Empuja la barra de navegación hacia la derecha */
+  padding: 0; /* Remueve cualquier padding adicional */
+  position: relative; /* Necesario para posicionar el menú desplegable */
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: var(--neutral-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Estilos para el botón de hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--neutral-light);
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 800px) {
+  .nav-bar {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinea los enlaces a la izquierda */
+    padding: 0.5rem; /* Ajusta el padding para dispositivos móviles */
+  }
+
+  .nav-menu {
+    display: none; /* Ocultar el menú por defecto en móviles */
+    flex-direction: column;
+    background-color: var(--neutral-dark);
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    display: flex; /* Mostrar el menú cuando se activa */
+  }
+
+  .hamburger {
+    display: flex; /* Mostrar el botón de hamburguesa */
+  }
+}

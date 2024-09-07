@@ -1,0 +1,54 @@
+/* src/styles/Header.css */
+
+/* Importar estilos comunes */
+@import './common.css';
+
+.header {
+  display: flex;
+  flex-direction: row; /* Alinear en fila */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Distribuye el espacio entre el logo y nav */
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Asegura que el header esté siempre encima */
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+.header-logo {
+  height: 70px; /* Tamaño ajustado del logo */
+  object-fit: contain; /* Asegura que el logo mantenga sus proporciones */
+  margin-right: 20px; /* Espacio entre el logo y los demás elementos */
+  cursor: pointer; /* Añade un cursor de puntero */
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem; /* Espaciado uniforme entre los enlaces */
+  align-items: center; /* Centra los enlaces verticalmente */
+  justify-content: flex-end; /* Empuja los enlaces hacia la derecha */
+  flex-grow: 1; /* Ocupa menos espacio en comparación con el logo */
+  flex-basis: 0; /* Permite a flex-grow ajustar correctamente el espacio */
+  margin-left: auto; /* Asegura que el nav se mueva lo más a la derecha posible */
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row; /* Cambiar a columna en dispositivos móviles */
+    align-items: flex-start; /* Alinear a la izquierda en pantallas pequeñas */
+    padding: 0.5rem 1rem;
+  }
+
+  .header-logo {
+    height: 50px; /* Tamaño más pequeño para dispositivos móviles */
+  }
+
+  .header-nav {
+    width: 100%; /* Asegura que el nav tome todo el ancho */
+    justify-content: space-between; /* Distribuir enlaces uniformemente */
+    margin-top: 10px; /* Espacio arriba del nav */
+  }
+}

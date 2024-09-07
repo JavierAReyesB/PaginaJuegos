@@ -1,0 +1,116 @@
+/* src/styles/TicTacToe.css */
+
+.tictactoe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(46, 58, 70, 0.8); /* Fondo más transparente */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px auto;
+  color: #f1f1f1;
+  background-image: url('https://st2.depositphotos.com/1454700/6392/i/450/depositphotos_63921643-stock-photo-arcade-machine-opposing-duel.jpg'); /* Aquí añadirás tu URL de imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  backdrop-filter: blur(8px); /* Efecto de desenfoque */
+}
+
+.tictactoe-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tictactoe-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(
+    75,
+    93,
+    107,
+    0.9
+  ); /* Ajustado para mayor transparencia */
+  border: 2px solid rgba(46, 58, 70, 0.8);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+}
+
+.tictactoe-cell:hover {
+  background-color: rgba(94, 124, 145, 0.9); /* Transparente en hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.tictactoe-cell:active {
+  background-color: rgba(75, 93, 107, 0.9);
+  transform: scale(1);
+}
+
+.winning-cell {
+  background-color: rgba(
+    255,
+    204,
+    0,
+    0.9
+  ); /* Resaltar celdas ganadoras con transparencia */
+  color: #000; /* Cambiar el color del texto para mayor contraste */
+}
+
+.status-message {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.reset-button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff5733;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1rem;
+}
+
+.reset-button:hover {
+  background-color: #ff704d;
+  transform: scale(1.05);
+}
+
+.reset-button:active {
+  background-color: #e64a19;
+  transform: scale(1);
+}
+
+/* Ajustes para el marcador de puntuaciones */
+.score-board {
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(58, 71, 80, 0.8); /* Fondo oscuro transparente */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 280px;
+}
+
+.score-board p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  font-weight: 600;
+  color: #ffffff; /* Asegura que el texto sea blanco y legible */
+}
